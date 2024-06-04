@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_service',
 ]
 
 MIDDLEWARE = [
@@ -74,15 +75,20 @@ WSGI_APPLICATION = 'django_service.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'database',
-        'USER': 'user',
-        'PASSWORD': '1234',
-        'HOST': 'localhost', # или адрес сервера PostgreSQL, если он не находится на локальном компьютере
-        'PORT': '5432', # порт PostgreSQL, обычно 5432
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+#      'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'database',
+#         'USER': 'user',
+#         'PASSWORD': '1234',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
@@ -125,3 +131,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
